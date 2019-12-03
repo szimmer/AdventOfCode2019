@@ -1,0 +1,1185 @@
+1                                                          The SAS System                            10:16 Tuesday, December 3, 2019
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M3) 
+      Licensed to RTI INTERNATIONAL-GRID NODE LOW, Site 70192005.
+NOTE: This session is executing on the Linux 3.10.0-1062.4.1.el7.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 14.1
+      SAS/ETS 14.1
+      SAS/OR 14.1
+      SAS/IML 14.1
+      SAS/QC 14.1
+
+NOTE: Additional host information:
+
+ Linux LIN X64 3.10.0-1062.4.1.el7.x86_64 #1 SMP Wed Sep 25 09:42:57 EDT 2019 x86_64 Red Hat Enterprise Linux Server release 7.7 
+      (Maipo) 
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           0.27 seconds
+      cpu time            0.07 seconds
+      
+SAS OPTION WORK IS RESTRICTED BY YOUR SITE ADMINISTRATOR AND CANNOT BE UPDATED.
+SAS OPTION MEMSIZE IS RESTRICTED BY YOUR SITE ADMINISTRATOR AND CANNOT BE UPDATED.
+SAS OPTION WORKPERMS IS RESTRICTED BY YOUR SITE ADMINISTRATOR AND CANNOT BE UPDATED.
+NOTE: Libref SASDATA successfully assigned from logical server.
+NOTE: Libref stpsamp successfully assigned from logical server.
+
+NOTE: AUTOEXEC processing beginning; file is /sas/config/Lev1/Applications/SASGridManagerClientUtility/9.4/sasgsub_autoexec.sas.
+
+rc=0
+NOTE: ~/sasgsub_autoexec.sas not found. This autoexec is optional to configure.
+
+NOTE: AUTOEXEC processing completed.
+
+1          proc import datafile="/rtpnfil02/rtpnfil02_vol6/CSDS/CENTER/Zimmer/AdventOfCode2019/Data/Day03_input.txt"
+2          dbms=csv replace out=wirepath_in;
+3          getnames=no;
+2                                                          The SAS System                            10:16 Tuesday, December 3, 2019
+
+4          run;
+
+NOTE: Unable to open parameter catalog: SASUSER.PARMS.PARMS.SLIST in update mode. Temporary parameter values will be saved to 
+WORK.PARMS.PARMS.SLIST.
+5           /**********************************************************************
+6           *   PRODUCT:   SAS
+7           *   VERSION:   9.4
+8           *   CREATOR:   External File Interface
+9           *   DATE:      03DEC19
+10          *   DESC:      Generated SAS Datastep Code
+11          *   TEMPLATE SOURCE:  (None Specified.)
+12          ***********************************************************************/
+13             data WORK.WIREPATH_IN    ;
+14             %let _EFIERR_ = 0; /* set the ERROR detection macro variable */
+15             infile '/rtpnfil02/rtpnfil02_vol6/CSDS/CENTER/Zimmer/AdventOfCode2019/Data/Day03_input.txt' delimiter = ',' MISSOVER
+15       ! DSD lrecl=32767 ;
+16                informat VAR1 $5. ;
+17                informat VAR2 $4. ;
+18                informat VAR3 $4. ;
+19                informat VAR4 $4. ;
+20                informat VAR5 $4. ;
+21                informat VAR6 $4. ;
+22                informat VAR7 $4. ;
+23                informat VAR8 $4. ;
+24                informat VAR9 $4. ;
+25                informat VAR10 $4. ;
+26                informat VAR11 $4. ;
+27                informat VAR12 $4. ;
+28                informat VAR13 $3. ;
+29                informat VAR14 $4. ;
+30                informat VAR15 $4. ;
+31                informat VAR16 $4. ;
+32                informat VAR17 $4. ;
+33                informat VAR18 $4. ;
+34                informat VAR19 $4. ;
+35                informat VAR20 $4. ;
+36                informat VAR21 $4. ;
+37                informat VAR22 $4. ;
+38                informat VAR23 $4. ;
+39                informat VAR24 $4. ;
+40                informat VAR25 $4. ;
+41                informat VAR26 $3. ;
+42                informat VAR27 $4. ;
+43                informat VAR28 $4. ;
+44                informat VAR29 $4. ;
+45                informat VAR30 $4. ;
+46                informat VAR31 $4. ;
+47                informat VAR32 $4. ;
+48                informat VAR33 $4. ;
+49                informat VAR34 $4. ;
+50                informat VAR35 $4. ;
+51                informat VAR36 $4. ;
+52                informat VAR37 $4. ;
+53                informat VAR38 $4. ;
+54                informat VAR39 $4. ;
+55                informat VAR40 $4. ;
+56                informat VAR41 $4. ;
+57                informat VAR42 $4. ;
+3                                                          The SAS System                            10:16 Tuesday, December 3, 2019
+
+58                informat VAR43 $4. ;
+59                informat VAR44 $4. ;
+60                informat VAR45 $4. ;
+61                informat VAR46 $4. ;
+62                informat VAR47 $4. ;
+63                informat VAR48 $4. ;
+64                informat VAR49 $4. ;
+65                informat VAR50 $4. ;
+66                informat VAR51 $4. ;
+67                informat VAR52 $4. ;
+68                informat VAR53 $4. ;
+69                informat VAR54 $4. ;
+70                informat VAR55 $4. ;
+71                informat VAR56 $4. ;
+72                informat VAR57 $4. ;
+73                informat VAR58 $4. ;
+74                informat VAR59 $4. ;
+75                informat VAR60 $4. ;
+76                informat VAR61 $4. ;
+77                informat VAR62 $4. ;
+78                informat VAR63 $4. ;
+79                informat VAR64 $4. ;
+80                informat VAR65 $4. ;
+81                informat VAR66 $4. ;
+82                informat VAR67 $4. ;
+83                informat VAR68 $4. ;
+84                informat VAR69 $4. ;
+85                informat VAR70 $4. ;
+86                informat VAR71 $4. ;
+87                informat VAR72 $4. ;
+88                informat VAR73 $4. ;
+89                informat VAR74 $4. ;
+90                informat VAR75 $4. ;
+91                informat VAR76 $4. ;
+92                informat VAR77 $4. ;
+93                informat VAR78 $4. ;
+94                informat VAR79 $4. ;
+95                informat VAR80 $4. ;
+96                informat VAR81 $4. ;
+97                informat VAR82 $4. ;
+98                informat VAR83 $4. ;
+99                informat VAR84 $4. ;
+100               informat VAR85 $4. ;
+101               informat VAR86 $4. ;
+102               informat VAR87 $4. ;
+103               informat VAR88 $4. ;
+104               informat VAR89 $4. ;
+105               informat VAR90 $4. ;
+106               informat VAR91 $4. ;
+107               informat VAR92 $4. ;
+108               informat VAR93 $4. ;
+109               informat VAR94 $4. ;
+110               informat VAR95 $4. ;
+111               informat VAR96 $4. ;
+112               informat VAR97 $4. ;
+113               informat VAR98 $4. ;
+114               informat VAR99 $4. ;
+115               informat VAR100 $4. ;
+4                                                          The SAS System                            10:16 Tuesday, December 3, 2019
+
+116               informat VAR101 $4. ;
+117               informat VAR102 $4. ;
+118               informat VAR103 $4. ;
+119               informat VAR104 $4. ;
+120               informat VAR105 $4. ;
+121               informat VAR106 $4. ;
+122               informat VAR107 $4. ;
+123               informat VAR108 $4. ;
+124               informat VAR109 $4. ;
+125               informat VAR110 $4. ;
+126               informat VAR111 $4. ;
+127               informat VAR112 $4. ;
+128               informat VAR113 $4. ;
+129               informat VAR114 $4. ;
+130               informat VAR115 $4. ;
+131               informat VAR116 $4. ;
+132               informat VAR117 $4. ;
+133               informat VAR118 $4. ;
+134               informat VAR119 $4. ;
+135               informat VAR120 $4. ;
+136               informat VAR121 $4. ;
+137               informat VAR122 $4. ;
+138               informat VAR123 $4. ;
+139               informat VAR124 $4. ;
+140               informat VAR125 $4. ;
+141               informat VAR126 $4. ;
+142               informat VAR127 $4. ;
+143               informat VAR128 $4. ;
+144               informat VAR129 $4. ;
+145               informat VAR130 $4. ;
+146               informat VAR131 $4. ;
+147               informat VAR132 $4. ;
+148               informat VAR133 $4. ;
+149               informat VAR134 $4. ;
+150               informat VAR135 $4. ;
+151               informat VAR136 $4. ;
+152               informat VAR137 $4. ;
+153               informat VAR138 $4. ;
+154               informat VAR139 $4. ;
+155               informat VAR140 $4. ;
+156               informat VAR141 $4. ;
+157               informat VAR142 $4. ;
+158               informat VAR143 $4. ;
+159               informat VAR144 $4. ;
+160               informat VAR145 $4. ;
+161               informat VAR146 $4. ;
+162               informat VAR147 $4. ;
+163               informat VAR148 $4. ;
+164               informat VAR149 $4. ;
+165               informat VAR150 $4. ;
+166               informat VAR151 $4. ;
+167               informat VAR152 $4. ;
+168               informat VAR153 $4. ;
+169               informat VAR154 $4. ;
+170               informat VAR155 $4. ;
+171               informat VAR156 $4. ;
+172               informat VAR157 $4. ;
+173               informat VAR158 $4. ;
+5                                                          The SAS System                            10:16 Tuesday, December 3, 2019
+
+174               informat VAR159 $4. ;
+175               informat VAR160 $4. ;
+176               informat VAR161 $4. ;
+177               informat VAR162 $4. ;
+178               informat VAR163 $4. ;
+179               informat VAR164 $4. ;
+180               informat VAR165 $4. ;
+181               informat VAR166 $4. ;
+182               informat VAR167 $4. ;
+183               informat VAR168 $4. ;
+184               informat VAR169 $4. ;
+185               informat VAR170 $4. ;
+186               informat VAR171 $4. ;
+187               informat VAR172 $4. ;
+188               informat VAR173 $4. ;
+189               informat VAR174 $4. ;
+190               informat VAR175 $4. ;
+191               informat VAR176 $4. ;
+192               informat VAR177 $4. ;
+193               informat VAR178 $4. ;
+194               informat VAR179 $4. ;
+195               informat VAR180 $4. ;
+196               informat VAR181 $4. ;
+197               informat VAR182 $4. ;
+198               informat VAR183 $4. ;
+199               informat VAR184 $4. ;
+200               informat VAR185 $4. ;
+201               informat VAR186 $3. ;
+202               informat VAR187 $4. ;
+203               informat VAR188 $4. ;
+204               informat VAR189 $4. ;
+205               informat VAR190 $4. ;
+206               informat VAR191 $4. ;
+207               informat VAR192 $4. ;
+208               informat VAR193 $4. ;
+209               informat VAR194 $4. ;
+210               informat VAR195 $4. ;
+211               informat VAR196 $4. ;
+212               informat VAR197 $4. ;
+213               informat VAR198 $4. ;
+214               informat VAR199 $4. ;
+215               informat VAR200 $4. ;
+216               informat VAR201 $4. ;
+217               informat VAR202 $4. ;
+218               informat VAR203 $4. ;
+219               informat VAR204 $4. ;
+220               informat VAR205 $4. ;
+221               informat VAR206 $4. ;
+222               informat VAR207 $4. ;
+223               informat VAR208 $4. ;
+224               informat VAR209 $4. ;
+225               informat VAR210 $4. ;
+226               informat VAR211 $4. ;
+227               informat VAR212 $4. ;
+228               informat VAR213 $4. ;
+229               informat VAR214 $4. ;
+230               informat VAR215 $4. ;
+231               informat VAR216 $4. ;
+6                                                          The SAS System                            10:16 Tuesday, December 3, 2019
+
+232               informat VAR217 $4. ;
+233               informat VAR218 $4. ;
+234               informat VAR219 $4. ;
+235               informat VAR220 $4. ;
+236               informat VAR221 $4. ;
+237               informat VAR222 $4. ;
+238               informat VAR223 $4. ;
+239               informat VAR224 $4. ;
+240               informat VAR225 $4. ;
+241               informat VAR226 $4. ;
+242               informat VAR227 $4. ;
+243               informat VAR228 $4. ;
+244               informat VAR229 $4. ;
+245               informat VAR230 $4. ;
+246               informat VAR231 $4. ;
+247               informat VAR232 $4. ;
+248               informat VAR233 $4. ;
+249               informat VAR234 $4. ;
+250               informat VAR235 $4. ;
+251               informat VAR236 $4. ;
+252               informat VAR237 $4. ;
+253               informat VAR238 $4. ;
+254               informat VAR239 $4. ;
+255               informat VAR240 $4. ;
+256               informat VAR241 $4. ;
+257               informat VAR242 $4. ;
+258               informat VAR243 $4. ;
+259               informat VAR244 $4. ;
+260               informat VAR245 $4. ;
+261               informat VAR246 $4. ;
+262               informat VAR247 $4. ;
+263               informat VAR248 $4. ;
+264               informat VAR249 $4. ;
+265               informat VAR250 $4. ;
+266               informat VAR251 $4. ;
+267               informat VAR252 $4. ;
+268               informat VAR253 $4. ;
+269               informat VAR254 $4. ;
+270               informat VAR255 $4. ;
+271               informat VAR256 $4. ;
+272               informat VAR257 $4. ;
+273               informat VAR258 $4. ;
+274               informat VAR259 $4. ;
+275               informat VAR260 $4. ;
+276               informat VAR261 $4. ;
+277               informat VAR262 $4. ;
+278               informat VAR263 $3. ;
+279               informat VAR264 $4. ;
+280               informat VAR265 $4. ;
+281               informat VAR266 $4. ;
+282               informat VAR267 $4. ;
+283               informat VAR268 $4. ;
+284               informat VAR269 $4. ;
+285               informat VAR270 $4. ;
+286               informat VAR271 $4. ;
+287               informat VAR272 $4. ;
+288               informat VAR273 $4. ;
+289               informat VAR274 $4. ;
+7                                                          The SAS System                            10:16 Tuesday, December 3, 2019
+
+290               informat VAR275 $4. ;
+291               informat VAR276 $4. ;
+292               informat VAR277 $4. ;
+293               informat VAR278 $4. ;
+294               informat VAR279 $4. ;
+295               informat VAR280 $4. ;
+296               informat VAR281 $4. ;
+297               informat VAR282 $4. ;
+298               informat VAR283 $4. ;
+299               informat VAR284 $4. ;
+300               informat VAR285 $4. ;
+301               informat VAR286 $4. ;
+302               informat VAR287 $4. ;
+303               informat VAR288 $4. ;
+304               informat VAR289 $4. ;
+305               informat VAR290 $4. ;
+306               informat VAR291 $4. ;
+307               informat VAR292 $4. ;
+308               informat VAR293 $4. ;
+309               informat VAR294 $4. ;
+310               informat VAR295 $4. ;
+311               informat VAR296 $4. ;
+312               informat VAR297 $4. ;
+313               informat VAR298 $4. ;
+314               informat VAR299 $4. ;
+315               informat VAR300 $4. ;
+316               informat VAR301 $4. ;
+317               format VAR1 $5. ;
+318               format VAR2 $4. ;
+319               format VAR3 $4. ;
+320               format VAR4 $4. ;
+321               format VAR5 $4. ;
+322               format VAR6 $4. ;
+323               format VAR7 $4. ;
+324               format VAR8 $4. ;
+325               format VAR9 $4. ;
+326               format VAR10 $4. ;
+327               format VAR11 $4. ;
+328               format VAR12 $4. ;
+329               format VAR13 $3. ;
+330               format VAR14 $4. ;
+331               format VAR15 $4. ;
+332               format VAR16 $4. ;
+333               format VAR17 $4. ;
+334               format VAR18 $4. ;
+335               format VAR19 $4. ;
+336               format VAR20 $4. ;
+337               format VAR21 $4. ;
+338               format VAR22 $4. ;
+339               format VAR23 $4. ;
+340               format VAR24 $4. ;
+341               format VAR25 $4. ;
+342               format VAR26 $3. ;
+343               format VAR27 $4. ;
+344               format VAR28 $4. ;
+345               format VAR29 $4. ;
+346               format VAR30 $4. ;
+347               format VAR31 $4. ;
+8                                                          The SAS System                            10:16 Tuesday, December 3, 2019
+
+348               format VAR32 $4. ;
+349               format VAR33 $4. ;
+350               format VAR34 $4. ;
+351               format VAR35 $4. ;
+352               format VAR36 $4. ;
+353               format VAR37 $4. ;
+354               format VAR38 $4. ;
+355               format VAR39 $4. ;
+356               format VAR40 $4. ;
+357               format VAR41 $4. ;
+358               format VAR42 $4. ;
+359               format VAR43 $4. ;
+360               format VAR44 $4. ;
+361               format VAR45 $4. ;
+362               format VAR46 $4. ;
+363               format VAR47 $4. ;
+364               format VAR48 $4. ;
+365               format VAR49 $4. ;
+366               format VAR50 $4. ;
+367               format VAR51 $4. ;
+368               format VAR52 $4. ;
+369               format VAR53 $4. ;
+370               format VAR54 $4. ;
+371               format VAR55 $4. ;
+372               format VAR56 $4. ;
+373               format VAR57 $4. ;
+374               format VAR58 $4. ;
+375               format VAR59 $4. ;
+376               format VAR60 $4. ;
+377               format VAR61 $4. ;
+378               format VAR62 $4. ;
+379               format VAR63 $4. ;
+380               format VAR64 $4. ;
+381               format VAR65 $4. ;
+382               format VAR66 $4. ;
+383               format VAR67 $4. ;
+384               format VAR68 $4. ;
+385               format VAR69 $4. ;
+386               format VAR70 $4. ;
+387               format VAR71 $4. ;
+388               format VAR72 $4. ;
+389               format VAR73 $4. ;
+390               format VAR74 $4. ;
+391               format VAR75 $4. ;
+392               format VAR76 $4. ;
+393               format VAR77 $4. ;
+394               format VAR78 $4. ;
+395               format VAR79 $4. ;
+396               format VAR80 $4. ;
+397               format VAR81 $4. ;
+398               format VAR82 $4. ;
+399               format VAR83 $4. ;
+400               format VAR84 $4. ;
+401               format VAR85 $4. ;
+402               format VAR86 $4. ;
+403               format VAR87 $4. ;
+404               format VAR88 $4. ;
+405               format VAR89 $4. ;
+9                                                          The SAS System                            10:16 Tuesday, December 3, 2019
+
+406               format VAR90 $4. ;
+407               format VAR91 $4. ;
+408               format VAR92 $4. ;
+409               format VAR93 $4. ;
+410               format VAR94 $4. ;
+411               format VAR95 $4. ;
+412               format VAR96 $4. ;
+413               format VAR97 $4. ;
+414               format VAR98 $4. ;
+415               format VAR99 $4. ;
+416               format VAR100 $4. ;
+417               format VAR101 $4. ;
+418               format VAR102 $4. ;
+419               format VAR103 $4. ;
+420               format VAR104 $4. ;
+421               format VAR105 $4. ;
+422               format VAR106 $4. ;
+423               format VAR107 $4. ;
+424               format VAR108 $4. ;
+425               format VAR109 $4. ;
+426               format VAR110 $4. ;
+427               format VAR111 $4. ;
+428               format VAR112 $4. ;
+429               format VAR113 $4. ;
+430               format VAR114 $4. ;
+431               format VAR115 $4. ;
+432               format VAR116 $4. ;
+433               format VAR117 $4. ;
+434               format VAR118 $4. ;
+435               format VAR119 $4. ;
+436               format VAR120 $4. ;
+437               format VAR121 $4. ;
+438               format VAR122 $4. ;
+439               format VAR123 $4. ;
+440               format VAR124 $4. ;
+441               format VAR125 $4. ;
+442               format VAR126 $4. ;
+443               format VAR127 $4. ;
+444               format VAR128 $4. ;
+445               format VAR129 $4. ;
+446               format VAR130 $4. ;
+447               format VAR131 $4. ;
+448               format VAR132 $4. ;
+449               format VAR133 $4. ;
+450               format VAR134 $4. ;
+451               format VAR135 $4. ;
+452               format VAR136 $4. ;
+453               format VAR137 $4. ;
+454               format VAR138 $4. ;
+455               format VAR139 $4. ;
+456               format VAR140 $4. ;
+457               format VAR141 $4. ;
+458               format VAR142 $4. ;
+459               format VAR143 $4. ;
+460               format VAR144 $4. ;
+461               format VAR145 $4. ;
+462               format VAR146 $4. ;
+463               format VAR147 $4. ;
+10                                                         The SAS System                            10:16 Tuesday, December 3, 2019
+
+464               format VAR148 $4. ;
+465               format VAR149 $4. ;
+466               format VAR150 $4. ;
+467               format VAR151 $4. ;
+468               format VAR152 $4. ;
+469               format VAR153 $4. ;
+470               format VAR154 $4. ;
+471               format VAR155 $4. ;
+472               format VAR156 $4. ;
+473               format VAR157 $4. ;
+474               format VAR158 $4. ;
+475               format VAR159 $4. ;
+476               format VAR160 $4. ;
+477               format VAR161 $4. ;
+478               format VAR162 $4. ;
+479               format VAR163 $4. ;
+480               format VAR164 $4. ;
+481               format VAR165 $4. ;
+482               format VAR166 $4. ;
+483               format VAR167 $4. ;
+484               format VAR168 $4. ;
+485               format VAR169 $4. ;
+486               format VAR170 $4. ;
+487               format VAR171 $4. ;
+488               format VAR172 $4. ;
+489               format VAR173 $4. ;
+490               format VAR174 $4. ;
+491               format VAR175 $4. ;
+492               format VAR176 $4. ;
+493               format VAR177 $4. ;
+494               format VAR178 $4. ;
+495               format VAR179 $4. ;
+496               format VAR180 $4. ;
+497               format VAR181 $4. ;
+498               format VAR182 $4. ;
+499               format VAR183 $4. ;
+500               format VAR184 $4. ;
+501               format VAR185 $4. ;
+502               format VAR186 $3. ;
+503               format VAR187 $4. ;
+504               format VAR188 $4. ;
+505               format VAR189 $4. ;
+506               format VAR190 $4. ;
+507               format VAR191 $4. ;
+508               format VAR192 $4. ;
+509               format VAR193 $4. ;
+510               format VAR194 $4. ;
+511               format VAR195 $4. ;
+512               format VAR196 $4. ;
+513               format VAR197 $4. ;
+514               format VAR198 $4. ;
+515               format VAR199 $4. ;
+516               format VAR200 $4. ;
+517               format VAR201 $4. ;
+518               format VAR202 $4. ;
+519               format VAR203 $4. ;
+520               format VAR204 $4. ;
+521               format VAR205 $4. ;
+11                                                         The SAS System                            10:16 Tuesday, December 3, 2019
+
+522               format VAR206 $4. ;
+523               format VAR207 $4. ;
+524               format VAR208 $4. ;
+525               format VAR209 $4. ;
+526               format VAR210 $4. ;
+527               format VAR211 $4. ;
+528               format VAR212 $4. ;
+529               format VAR213 $4. ;
+530               format VAR214 $4. ;
+531               format VAR215 $4. ;
+532               format VAR216 $4. ;
+533               format VAR217 $4. ;
+534               format VAR218 $4. ;
+535               format VAR219 $4. ;
+536               format VAR220 $4. ;
+537               format VAR221 $4. ;
+538               format VAR222 $4. ;
+539               format VAR223 $4. ;
+540               format VAR224 $4. ;
+541               format VAR225 $4. ;
+542               format VAR226 $4. ;
+543               format VAR227 $4. ;
+544               format VAR228 $4. ;
+545               format VAR229 $4. ;
+546               format VAR230 $4. ;
+547               format VAR231 $4. ;
+548               format VAR232 $4. ;
+549               format VAR233 $4. ;
+550               format VAR234 $4. ;
+551               format VAR235 $4. ;
+552               format VAR236 $4. ;
+553               format VAR237 $4. ;
+554               format VAR238 $4. ;
+555               format VAR239 $4. ;
+556               format VAR240 $4. ;
+557               format VAR241 $4. ;
+558               format VAR242 $4. ;
+559               format VAR243 $4. ;
+560               format VAR244 $4. ;
+561               format VAR245 $4. ;
+562               format VAR246 $4. ;
+563               format VAR247 $4. ;
+564               format VAR248 $4. ;
+565               format VAR249 $4. ;
+566               format VAR250 $4. ;
+567               format VAR251 $4. ;
+568               format VAR252 $4. ;
+569               format VAR253 $4. ;
+570               format VAR254 $4. ;
+571               format VAR255 $4. ;
+572               format VAR256 $4. ;
+573               format VAR257 $4. ;
+574               format VAR258 $4. ;
+575               format VAR259 $4. ;
+576               format VAR260 $4. ;
+577               format VAR261 $4. ;
+578               format VAR262 $4. ;
+579               format VAR263 $3. ;
+12                                                         The SAS System                            10:16 Tuesday, December 3, 2019
+
+580               format VAR264 $4. ;
+581               format VAR265 $4. ;
+582               format VAR266 $4. ;
+583               format VAR267 $4. ;
+584               format VAR268 $4. ;
+585               format VAR269 $4. ;
+586               format VAR270 $4. ;
+587               format VAR271 $4. ;
+588               format VAR272 $4. ;
+589               format VAR273 $4. ;
+590               format VAR274 $4. ;
+591               format VAR275 $4. ;
+592               format VAR276 $4. ;
+593               format VAR277 $4. ;
+594               format VAR278 $4. ;
+595               format VAR279 $4. ;
+596               format VAR280 $4. ;
+597               format VAR281 $4. ;
+598               format VAR282 $4. ;
+599               format VAR283 $4. ;
+600               format VAR284 $4. ;
+601               format VAR285 $4. ;
+602               format VAR286 $4. ;
+603               format VAR287 $4. ;
+604               format VAR288 $4. ;
+605               format VAR289 $4. ;
+606               format VAR290 $4. ;
+607               format VAR291 $4. ;
+608               format VAR292 $4. ;
+609               format VAR293 $4. ;
+610               format VAR294 $4. ;
+611               format VAR295 $4. ;
+612               format VAR296 $4. ;
+613               format VAR297 $4. ;
+614               format VAR298 $4. ;
+615               format VAR299 $4. ;
+616               format VAR300 $4. ;
+617               format VAR301 $4. ;
+618            input
+619                        VAR1 $
+620                        VAR2 $
+621                        VAR3 $
+622                        VAR4 $
+623                        VAR5 $
+624                        VAR6 $
+625                        VAR7 $
+626                        VAR8 $
+627                        VAR9 $
+628                        VAR10 $
+629                        VAR11 $
+630                        VAR12 $
+631                        VAR13 $
+632                        VAR14 $
+633                        VAR15 $
+634                        VAR16 $
+635                        VAR17 $
+636                        VAR18 $
+637                        VAR19 $
+13                                                         The SAS System                            10:16 Tuesday, December 3, 2019
+
+638                        VAR20 $
+639                        VAR21 $
+640                        VAR22 $
+641                        VAR23 $
+642                        VAR24 $
+643                        VAR25 $
+644                        VAR26 $
+645                        VAR27 $
+646                        VAR28 $
+647                        VAR29 $
+648                        VAR30 $
+649                        VAR31 $
+650                        VAR32 $
+651                        VAR33 $
+652                        VAR34 $
+653                        VAR35 $
+654                        VAR36 $
+655                        VAR37 $
+656                        VAR38 $
+657                        VAR39 $
+658                        VAR40 $
+659                        VAR41 $
+660                        VAR42 $
+661                        VAR43 $
+662                        VAR44 $
+663                        VAR45 $
+664                        VAR46 $
+665                        VAR47 $
+666                        VAR48 $
+667                        VAR49 $
+668                        VAR50 $
+669                        VAR51 $
+670                        VAR52 $
+671                        VAR53 $
+672                        VAR54 $
+673                        VAR55 $
+674                        VAR56 $
+675                        VAR57 $
+676                        VAR58 $
+677                        VAR59 $
+678                        VAR60 $
+679                        VAR61 $
+680                        VAR62 $
+681                        VAR63 $
+682                        VAR64 $
+683                        VAR65 $
+684                        VAR66 $
+685                        VAR67 $
+686                        VAR68 $
+687                        VAR69 $
+688                        VAR70 $
+689                        VAR71 $
+690                        VAR72 $
+691                        VAR73 $
+692                        VAR74 $
+693                        VAR75 $
+694                        VAR76 $
+695                        VAR77 $
+14                                                         The SAS System                            10:16 Tuesday, December 3, 2019
+
+696                        VAR78 $
+697                        VAR79 $
+698                        VAR80 $
+699                        VAR81 $
+700                        VAR82 $
+701                        VAR83 $
+702                        VAR84 $
+703                        VAR85 $
+704                        VAR86 $
+705                        VAR87 $
+706                        VAR88 $
+707                        VAR89 $
+708                        VAR90 $
+709                        VAR91 $
+710                        VAR92 $
+711                        VAR93 $
+712                        VAR94 $
+713                        VAR95 $
+714                        VAR96 $
+715                        VAR97 $
+716                        VAR98 $
+717                        VAR99 $
+718                        VAR100 $
+719                        VAR101 $
+720                        VAR102 $
+721                        VAR103 $
+722                        VAR104 $
+723                        VAR105 $
+724                        VAR106 $
+725                        VAR107 $
+726                        VAR108 $
+727                        VAR109 $
+728                        VAR110 $
+729                        VAR111 $
+730                        VAR112 $
+731                        VAR113 $
+732                        VAR114 $
+733                        VAR115 $
+734                        VAR116 $
+735                        VAR117 $
+736                        VAR118 $
+737                        VAR119 $
+738                        VAR120 $
+739                        VAR121 $
+740                        VAR122 $
+741                        VAR123 $
+742                        VAR124 $
+743                        VAR125 $
+744                        VAR126 $
+745                        VAR127 $
+746                        VAR128 $
+747                        VAR129 $
+748                        VAR130 $
+749                        VAR131 $
+750                        VAR132 $
+751                        VAR133 $
+752                        VAR134 $
+753                        VAR135 $
+15                                                         The SAS System                            10:16 Tuesday, December 3, 2019
+
+754                        VAR136 $
+755                        VAR137 $
+756                        VAR138 $
+757                        VAR139 $
+758                        VAR140 $
+759                        VAR141 $
+760                        VAR142 $
+761                        VAR143 $
+762                        VAR144 $
+763                        VAR145 $
+764                        VAR146 $
+765                        VAR147 $
+766                        VAR148 $
+767                        VAR149 $
+768                        VAR150 $
+769                        VAR151 $
+770                        VAR152 $
+771                        VAR153 $
+772                        VAR154 $
+773                        VAR155 $
+774                        VAR156 $
+775                        VAR157 $
+776                        VAR158 $
+777                        VAR159 $
+778                        VAR160 $
+779                        VAR161 $
+780                        VAR162 $
+781                        VAR163 $
+782                        VAR164 $
+783                        VAR165 $
+784                        VAR166 $
+785                        VAR167 $
+786                        VAR168 $
+787                        VAR169 $
+788                        VAR170 $
+789                        VAR171 $
+790                        VAR172 $
+791                        VAR173 $
+792                        VAR174 $
+793                        VAR175 $
+794                        VAR176 $
+795                        VAR177 $
+796                        VAR178 $
+797                        VAR179 $
+798                        VAR180 $
+799                        VAR181 $
+800                        VAR182 $
+801                        VAR183 $
+802                        VAR184 $
+803                        VAR185 $
+804                        VAR186 $
+805                        VAR187 $
+806                        VAR188 $
+807                        VAR189 $
+808                        VAR190 $
+809                        VAR191 $
+810                        VAR192 $
+811                        VAR193 $
+16                                                         The SAS System                            10:16 Tuesday, December 3, 2019
+
+812                        VAR194 $
+813                        VAR195 $
+814                        VAR196 $
+815                        VAR197 $
+816                        VAR198 $
+817                        VAR199 $
+818                        VAR200 $
+819                        VAR201 $
+820                        VAR202 $
+821                        VAR203 $
+822                        VAR204 $
+823                        VAR205 $
+824                        VAR206 $
+825                        VAR207 $
+826                        VAR208 $
+827                        VAR209 $
+828                        VAR210 $
+829                        VAR211 $
+830                        VAR212 $
+831                        VAR213 $
+832                        VAR214 $
+833                        VAR215 $
+834                        VAR216 $
+835                        VAR217 $
+836                        VAR218 $
+837                        VAR219 $
+838                        VAR220 $
+839                        VAR221 $
+840                        VAR222 $
+841                        VAR223 $
+842                        VAR224 $
+843                        VAR225 $
+844                        VAR226 $
+845                        VAR227 $
+846                        VAR228 $
+847                        VAR229 $
+848                        VAR230 $
+849                        VAR231 $
+850                        VAR232 $
+851                        VAR233 $
+852                        VAR234 $
+853                        VAR235 $
+854                        VAR236 $
+855                        VAR237 $
+856                        VAR238 $
+857                        VAR239 $
+858                        VAR240 $
+859                        VAR241 $
+860                        VAR242 $
+861                        VAR243 $
+862                        VAR244 $
+863                        VAR245 $
+864                        VAR246 $
+865                        VAR247 $
+866                        VAR248 $
+867                        VAR249 $
+868                        VAR250 $
+869                        VAR251 $
+17                                                         The SAS System                            10:16 Tuesday, December 3, 2019
+
+870                        VAR252 $
+871                        VAR253 $
+872                        VAR254 $
+873                        VAR255 $
+874                        VAR256 $
+875                        VAR257 $
+876                        VAR258 $
+877                        VAR259 $
+878                        VAR260 $
+879                        VAR261 $
+880                        VAR262 $
+881                        VAR263 $
+882                        VAR264 $
+883                        VAR265 $
+884                        VAR266 $
+885                        VAR267 $
+886                        VAR268 $
+887                        VAR269 $
+888                        VAR270 $
+889                        VAR271 $
+890                        VAR272 $
+891                        VAR273 $
+892                        VAR274 $
+893                        VAR275 $
+894                        VAR276 $
+895                        VAR277 $
+896                        VAR278 $
+897                        VAR279 $
+898                        VAR280 $
+899                        VAR281 $
+900                        VAR282 $
+901                        VAR283 $
+902                        VAR284 $
+903                        VAR285 $
+904                        VAR286 $
+905                        VAR287 $
+906                        VAR288 $
+907                        VAR289 $
+908                        VAR290 $
+909                        VAR291 $
+910                        VAR292 $
+911                        VAR293 $
+912                        VAR294 $
+913                        VAR295 $
+914                        VAR296 $
+915                        VAR297 $
+916                        VAR298 $
+917                        VAR299 $
+918                        VAR300 $
+919                        VAR301 $
+920            ;
+921            if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro variable */
+922            run;
+
+NOTE: The infile '/rtpnfil02/rtpnfil02_vol6/CSDS/CENTER/Zimmer/AdventOfCode2019/Data/Day03_input.txt' is:
+      Filename=/rtpnfil02/rtpnfil02_vol6/CSDS/CENTER/Zimmer/AdventOfCode2019/Data/Day03_input.txt,
+      Owner Name=sazimmer,Group Name=domain users,
+      Access Permission=-rwx------,
+18                                                         The SAS System                            10:16 Tuesday, December 3, 2019
+
+      Last Modified=03Dec2019:09:53:21,
+      File Size (bytes)=2961
+
+NOTE: 2 records were read from the infile '/rtpnfil02/rtpnfil02_vol6/CSDS/CENTER/Zimmer/AdventOfCode2019/Data/Day03_input.txt'.
+      The minimum record length was 1477.
+      The maximum record length was 1480.
+NOTE: The data set WORK.WIREPATH_IN has 2 observations and 301 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.02 seconds
+      
+
+2 rows created in WORK.WIREPATH_IN from /rtpnfil02/rtpnfil02_vol6/CSDS/CENTER/Zimmer/AdventOfCode2019/Data/Day03_input.txt.
+  
+  
+  
+NOTE: WORK.WIREPATH_IN data set was successfully created.
+NOTE: The data set WORK.WIREPATH_IN has 2 observations and 301 variables.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.29 seconds
+      cpu time            0.10 seconds
+      
+
+923        
+924        proc transpose data=wirepath_in out=wirepath_t;
+925        var var:;
+926        run;
+
+NOTE: There were 2 observations read from the data set WORK.WIREPATH_IN.
+NOTE: The data set WORK.WIREPATH_T has 301 observations and 3 variables.
+NOTE: PROCEDURE TRANSPOSE used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+
+927        
+928        data Path1;
+929        	set wirepath_t (keep=col1 rename=(col1=Instruction));
+930        	retain x y step 0;
+931        
+932        	Dir=substr(Instruction, 1, 1);
+933        	Dist=input(substr(Instruction, 2), 8.);
+934        	do i = 1 to Dist;
+935        		Step=Step+1;
+936        		if Dir="U" then y=y+1;
+937        		else if Dir="D" then y=y-1;
+938        		else if Dir="L" then x=x-1;
+939        		else if Dir="R" then x=x+1;
+940        		output;
+941        	end;
+942        	keep x y step;
+943        	rename Step=Step1;
+944        run;
+
+NOTE: There were 301 observations read from the data set WORK.WIREPATH_T.
+NOTE: The data set WORK.PATH1 has 166727 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+19                                                         The SAS System                            10:16 Tuesday, December 3, 2019
+
+      cpu time            0.02 seconds
+      
+
+945        
+946        data Path2;
+947        	set wirepath_t (keep=col2 rename=(col2=Instruction));
+948        	retain x y step 0;
+949        
+950        	Dir=substr(Instruction, 1, 1);
+951        	Dist=input(substr(Instruction, 2), 8.);
+952        	do i = 1 to Dist;
+953        		Step=Step+1;
+954        		if Dir="U" then y=y+1;
+955        		else if Dir="D" then y=y-1;
+956        		else if Dir="L" then x=x-1;
+957        		else if Dir="R" then x=x+1;
+958        		output;
+959        	end;
+960        	keep x y step;
+961        	rename Step=Step2;
+962        run;
+
+NOTE: There were 301 observations read from the data set WORK.WIREPATH_T.
+NOTE: The data set WORK.PATH2 has 156977 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+      
+
+963        
+964        proc sort data=Path1;
+965        by x y;
+966        run;
+
+NOTE: There were 166727 observations read from the data set WORK.PATH1.
+NOTE: The data set WORK.PATH1 has 166727 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.04 seconds
+      
+
+967        proc sort data=Path2;
+968        by x y;
+969        run;
+
+NOTE: There were 156977 observations read from the data set WORK.PATH2.
+NOTE: The data set WORK.PATH2 has 156977 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.04 seconds
+      
+
+970        
+971        data PathJoin;
+972        	merge Path1 (in=a) Path2 (in=b);
+973        	by x y;
+974        	if a and b;
+975        run;
+20                                                         The SAS System                            10:16 Tuesday, December 3, 2019
+
+
+NOTE: There were 166727 observations read from the data set WORK.PATH1.
+NOTE: There were 156977 observations read from the data set WORK.PATH2.
+NOTE: The data set WORK.PATHJOIN has 40 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.05 seconds
+      
+
+976        
+977        data PathJoinDist;
+978        	set PathJoin;
+979        	Dist=abs(x)+abs(y);
+980        	TotSteps=sum(step1, step2);
+981        run;
+
+NOTE: There were 40 observations read from the data set WORK.PATHJOIN.
+NOTE: The data set WORK.PATHJOINDIST has 40 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+982        
+983        title "Solution to Part 1 and Part 2 of Day 3";
+984        proc means data=PathJoinDist min;
+985        var Dist TotSteps;
+986        run;
+
+NOTE: There were 40 observations read from the data set WORK.PATHJOINDIST.
+NOTE: The PROCEDURE MEANS printed page 1.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.03 seconds
+      
+
+987        title;
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           3.42 seconds
+      cpu time            1.54 seconds
+      

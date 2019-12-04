@@ -65,4 +65,5 @@ Path1 %>% inner_join(Path2, by=c("x", "y")) %>%
   mutate(Dist=abs(x)+abs(y),
          TotalSteps=(Step1+Step2)) %>%
   arrange(TotalSteps) %>% 
-  slice(2)
+  filter(Step1>0 & Step2>0) %>%
+  slice(1)

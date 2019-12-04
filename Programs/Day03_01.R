@@ -34,7 +34,7 @@ MakePath <- function(dir){
     lastx <- x[length(x)]
     lasty <- y[length(y)]
   }
-  PathList <- tibble(x=x, y=y)
+  PathList <- tibble(x=x[-1], y=y[-1])
   return(PathList)
 }  
 
@@ -46,8 +46,8 @@ Path2 <- MakePath(dir2)
 # This should be 159
 Path1 %>% inner_join(Path2, by=c("x", "y")) %>%
   filter(x!=0 | y!=0) %>%
-  mutate(Dist=abs(x)+abs(y)) %>%
-  pull(Dist) %>% min()
+  mutate(Dist=abs(x)+abs(y)) #%>%
+  # pull(Dist) %>% min()
 
 #### Solve puzzle
 

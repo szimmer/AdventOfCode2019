@@ -23,16 +23,24 @@ FinalPicture <- rep(2, prod(imagesize))
 
 for (pix in 1:prod(imagesize)){
   lyr <- 0
-  while(FinalPicture[pix]==2 ){
+  while(FinalPicture[pix]==2 & lyr< 100 ){
     lyr <- lyr + 1
     FinalPicture[pix] <- str_sub(Layers[lyr], pix, pix) %>% as.numeric()
   }
 }
 
 dfp <- tibble(ColourNum=FinalPicture) %>%
-  filter() %>%
+  filter(ColourNum !=2) %>%
   mutate(x=rep(1:25, 6),
          y=rep(6:1, each=25),
          Colour=case_when(
            ColourNum==0~"black",
            ColourNum==1~"white")) 
+
+dfp %>% 
+  filter(ColourNum==1) %>%
+  ggplot(aes(x=x, y=y))+
+  geom_point()
+
+
+# CJZHR
